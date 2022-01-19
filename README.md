@@ -30,3 +30,9 @@ example:
 | [1]_211111.pdf           | 211111.pdf                |
 | [2]_ML_v5_3.m4v          | ML_v5_3.m4v               |
 | archive_filelist.csv     | *deleted*                 |
+
+----
+
+#### Todo:
+
+- maybe add unzip function
