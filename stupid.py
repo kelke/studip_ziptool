@@ -1,5 +1,4 @@
 import os
-from os import walk
 import re
 
 path = input("Please enter desired folder:")
@@ -12,7 +11,7 @@ os.chdir(path)
 print("Folder :"+os.getcwd()+" was selected")
 
 files = []
-for (dirpath, dirnames, filenames) in walk(path):
+for (dirpath, dirnames, filenames) in os.walk(path):
     files.extend(filenames)
     break
 
