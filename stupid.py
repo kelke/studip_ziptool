@@ -3,14 +3,13 @@ from os import walk
 import re
 
 path = input("Bitte Verzeichnispfad angeben:")
-path = path.replace("/","\\")
+if os.name == 'nt':
+    path = path.replace("/","\\")
+else:
+    path = path.replace("\\","/")
+
 os.chdir(path)
 print("Verzeichnis :"+os.getcwd()+" wurde ausgewählt")
-
-fn = "[17]_220113_b.pdf"
-newfn = re.sub('^\[\d+\]_','', fn)
-#os.rename(fn, newfn)
-#print(fn+" wurde in: "+newfn+"geändert")
 
 files = []
 for (dirpath, dirnames, filenames) in walk(path):
