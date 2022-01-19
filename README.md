@@ -20,7 +20,7 @@ It also deletes the "archive_filelist.csv" file
 
 This script uses the regex expression:  **^\\[\d+\\]** and just deletes that part of the filename.
 
-It also 
+archive_filelist.csv is also deleted if present
 
 example:
 
