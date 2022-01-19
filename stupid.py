@@ -2,14 +2,14 @@ import os
 from os import walk
 import re
 
-path = input("Bitte Verzeichnispfad angeben:")
+path = input("Please enter desired folder:")
 if os.name == 'nt':
     path = path.replace("/","\\")
 else:
     path = path.replace("\\","/")
 
 os.chdir(path)
-print("Verzeichnis :"+os.getcwd()+" wurde ausgewählt")
+print("Folder :"+os.getcwd()+" was selected")
 
 files = []
 for (dirpath, dirnames, filenames) in walk(path):
@@ -26,10 +26,10 @@ for f in files:
     newf = re.sub('^\[\d+\]_','', f)
     if f != newf:
         os.rename(f, newf)
-        print("Datei: "+f+" wurde in: "+newf+" umbenannt")
+        print("File: "+f+" was renamed to: "+newf)
         rencount += 1
 
-s = "Es wurden: "+str(rencount)+" Dateien umbenannt"
+s = "A total of: "+str(rencount)+" files were renamed"
 if(remflag):
-    s += ", und die archive_filelist wurde gelöscht"
+    s += ", and 'archive_filelist.csv' was deleted"
 print("\n"+s)
